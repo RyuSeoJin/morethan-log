@@ -1,5 +1,5 @@
 import { CONFIG } from "site.config"
-import { ReactCusdis } from "react-cusdis"
+// import { ReactCusdis } from "react-cusdis"
 import { useCallback, useEffect, useState } from "react"
 import styled from "@emotion/styled"
 import useScheme from "src/hooks/useScheme"
@@ -40,7 +40,7 @@ const Cusdis: React.FC<Props> = ({ id, slug, title }) => {
   return (
     <>
       <StyledWrapper id="comments">
-        <ReactCusdis
+        {/* <ReactCusdis
           key={value}
           attrs={{
             host: CONFIG.cusdis.config.host,
@@ -50,7 +50,7 @@ const Cusdis: React.FC<Props> = ({ id, slug, title }) => {
             pageUrl: `${CONFIG.link}/${slug}`,
             theme: scheme,
           }}
-        />
+        /> */}
       </StyledWrapper>
     </>
   )

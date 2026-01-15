@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>https://ryuseojin.com</loc><lastmod>2026-01-15T15:35:24.120Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ryuseojin.com/sitemap.xml</loc><lastmod>2026-01-15T15:35:24.121Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ryuseojin.com/docs</loc><lastmod>2026-01-15T15:35:24.122Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ryuseojin.com/hot-to-make-sitemap-in-next-js</loc><lastmod>2026-01-15T15:35:24.122Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ryuseojin.com/apollo-gettings-started-mutate</loc><lastmod>2026-01-15T15:35:24.122Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ryuseojin.com/apollo-gettings-started-query</loc><lastmod>2026-01-15T15:35:24.122Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ryuseojin.com/resume</loc><lastmod>2026-01-15T15:35:24.122Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ryuseojin.com/resume2</loc><lastmod>2026-01-15T15:35:24.122Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ryuseojin.com/about-graphql</loc><lastmod>2026-01-15T15:35:24.122Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ryuseojin.com/how-to-apply-ga-to-next.js</loc><lastmod>2026-01-15T15:35:24.122Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ryuseojin.com/about-opensource-license</loc><lastmod>2026-01-15T15:35:24.122Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://ryuseojin.com/about</loc><lastmod>2026-01-15T15:35:24.122Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+</urlset>
