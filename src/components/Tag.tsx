@@ -34,3 +34,6 @@ const StyledWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.gray5};
   cursor: pointer;
 `
+<StyledWrapper onClick={() => handleClick(children)}>
+  {children.split("::")[2]}
+</StyledWrapper>
