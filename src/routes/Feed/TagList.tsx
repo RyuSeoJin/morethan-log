@@ -78,7 +78,7 @@ const TagList: React.FC<Props> = () => {
   }, [])
 
   return (
-    <StyledWrapper onClick={() => handleClick(children)}>
+    <StyledWrapper onClick={() => handleClickTag(children)}>
       {children.split("::")[2]}
     </StyledWrapper>
   )
