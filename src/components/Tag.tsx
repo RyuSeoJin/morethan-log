@@ -14,7 +14,7 @@ const Tag: React.FC<Props> = ({ children }) => {
   }
   return (
     <StyledWrapper onClick={() => handleClick(children)}>
-      {children}
+      {children.split("::")[2]}
     </StyledWrapper>
   )
 }
@@ -34,3 +34,4 @@ const StyledWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.gray5};
   cursor: pointer;
 `
+
