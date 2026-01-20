@@ -20,6 +20,7 @@ const PostList: React.FC<Props> = ({ q }) => {
   useEffect(() => {
     setFilteredPosts(() => {
       let newFilteredPosts = data
+      
       // keyword
       newFilteredPosts = newFilteredPosts.filter((post) => {
         const tagContent = post.tags ? post.tags.join(" ") : ""
@@ -29,8 +30,13 @@ const PostList: React.FC<Props> = ({ q }) => {
 
       // tag
       if (currentTag) {
+        // "숫자::대분류::소분류" 형태에서 실제 태그인 "소분류"만 가져옵니다.
+        const targetTag = currentTag.includes("::")
+          ? currentTag.split("::")[2]
+          : currentTag
+        // 여기까지 추가한 내용
         newFilteredPosts = newFilteredPosts.filter(
-          (post) => post && post.tags && post.tags.includes(currentTag)
+          (post) => post && post.tags && post.tags.includes(targetTag)
         )
       }
 
