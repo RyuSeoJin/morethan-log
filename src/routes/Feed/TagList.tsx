@@ -78,8 +78,11 @@ const TagList: React.FC<Props> = () => {
   }, [])
 
   return (
-    <StyledWrapper onClick={() => handleClickTag(children)}>
-      {children.split("::")[2]}
+    <StyledWrapper>
+      <div className="top">
+        <Emoji>🏷️</Emoji> 태그
+      </div>
+      <div className="list">{tagContents()}</div>
     </StyledWrapper>
   )
 }
