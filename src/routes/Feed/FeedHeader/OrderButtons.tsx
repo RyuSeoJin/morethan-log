@@ -2,14 +2,14 @@ import styled from "@emotion/styled"
 import { useRouter } from "next/router"
 import React from "react"
 
-type TOrder = "asc" | "desc"
+type TOrder = "오래된 순" | "최신 순"
 
 type Props = {}
 
 const OrderButtons: React.FC<Props> = () => {
   const router = useRouter()
 
-  const currentOrder = `${router.query.order || ``}` || ("desc" as TOrder)
+  const currentOrder = `${router.query.order || ``}` || ("최신 순" as TOrder)
 
   const handleClickOrderBy = (value: TOrder) => {
     router.push({
@@ -22,14 +22,14 @@ const OrderButtons: React.FC<Props> = () => {
   return (
     <StyledWrapper>
       <a
-        data-active={currentOrder === "desc"}
-        onClick={() => handleClickOrderBy("desc")}
+        data-active={currentOrder === "최신 순"}
+        onClick={() => handleClickOrderBy("최신 순")}
       >
         Desc
       </a>
       <a
-        data-active={currentOrder === "asc"}
-        onClick={() => handleClickOrderBy("asc")}
+        data-active={currentOrder === "오래된 순"}
+        onClick={() => handleClickOrderBy("오래된 순")}
       >
         Asc
       </a>
@@ -55,3 +55,4 @@ const StyledWrapper = styled.div`
     }
   }
 `
+
