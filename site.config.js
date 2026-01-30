@@ -12,8 +12,16 @@ const CONFIG = {
   },
   projects: [
     {
-      name: `Ryu Seo Jin`,
-      href: "https://github.com/RyuSeoJin/morethan-log",
+      name: `포트폴리오 1 [Lakaya(창작 슈팅 게임) 레벨 기획서]`,
+      href: "https://ryuseojin.com/",
+    },
+    {
+      name: `포트폴리오 2 [로스트아크 아르모체 하드 레벨 역기획서]`,
+      href: "https://ryuseojin.com/",
+    },
+    {
+      name: `포트폴리오 3 [로스트아크 4막: 에키드나 레벨 역기획서]`,
+      href: "https://ryuseojin.com/",
     },
   ],
   // blog setting (required)
