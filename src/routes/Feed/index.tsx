@@ -27,8 +27,11 @@ const Feed: React.FC<Props> = () => {
           height: `calc(100vh - ${HEADER_HEIGHT}px)`,
         }}
       >
-        <TagList />
+        <ProfileCard />
+        <ServiceCard />
+        <ContactCard />
       </div>
+      
       <div className="mid">
         <MobileProfileCard />
         <PinnedPosts q={q} />
@@ -48,9 +51,7 @@ const Feed: React.FC<Props> = () => {
           height: `calc(100vh - ${HEADER_HEIGHT}px)`,
         }}
       >
-        <ProfileCard />
-        <ServiceCard />
-        <ContactCard />
+        <TagList />
         <div className="footer">
           <Footer />
         </div>
@@ -77,7 +78,7 @@ const StyledWrapper = styled.div`
     display: none;
     overflow: scroll;
     position: sticky;
-    grid-column: span 2 / span 2;
+    grid-column: span 3 / span 3;
     top: ${HEADER_HEIGHT - 10}px;
 
     scrollbar-width: none;
@@ -128,7 +129,7 @@ const StyledWrapper = styled.div`
 
     @media (min-width: 1024px) {
       display: block;
-      grid-column: span 3 / span 3;
+      grid-column: span 2 / span 2;
     }
 
     .footer {
@@ -136,3 +137,4 @@ const StyledWrapper = styled.div`
     }
   }
 `
+
