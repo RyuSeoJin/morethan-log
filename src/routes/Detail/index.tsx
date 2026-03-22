@@ -16,6 +16,13 @@ const Detail: React.FC<Props> = () => {
 
   useEffect(() => {
     const handleDocumentClick = (e: MouseEvent) => {
+      const target = e.target as Element
+      if (
+        target.classList?.contains("medium-zoom-overlay") ||
+        target.classList?.contains("medium-zoom-image--opened")
+      )
+        return
+
       if (contentRef.current && !contentRef.current.contains(e.target as Node)) {
         const savedQuery = sessionStorage.getItem("feedQuery")
         const query = savedQuery ? JSON.parse(savedQuery) : {}
