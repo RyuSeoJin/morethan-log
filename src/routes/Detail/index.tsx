@@ -4,26 +4,35 @@ import PageDetail from "./PageDetail"
 import styled from "@emotion/styled"
 import usePostQuery from "src/hooks/usePostQuery"
 import { useRouter } from "next/router"
+import { useRef, useEffect } from "react"
 
 type Props = {}
 
 const Detail: React.FC<Props> = () => {
   const data = usePostQuery()
   const router = useRouter()
+  const contentRef = useRef<HTMLDivElement>(null)
   useMermaidEffect()
 
-  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.target !== e.currentTarget) return
-    const savedQuery = sessionStorage.getItem("feedQuery")
-    const query = savedQuery ? JSON.parse(savedQuery) : {}
-    router.push({ pathname: "/", query })
-  }
+  useEffect(() => {
+    const handleDocumentClick = (e: MouseEvent) => {
+      if (contentRef.current && !contentRef.current.contains(e.target as Node)) {
+        const savedQuery = sessionStorage.getItem("feedQuery")
+        const query = savedQuery ? JSON.parse(savedQuery) : {}
+        router.push({ pathname: "/", query })
+      }
+    }
+    document.addEventListener("click", handleDocumentClick)
+    return () => document.removeEventListener("click", handleDocumentClick)
+  }, [router])
 
   if (!data) return null
   return (
-    <StyledWrapper data-type={data.type} onClick={handleBackdropClick}>
-      {data.type[0] === "Page" && <PageDetail />}
-      {data.type[0] !== "Page" && <PostDetail />}
+    <StyledWrapper data-type={data.type}>
+      <div ref={contentRef} css={{ cursor: "auto" }}>
+        {data.type[0] === "Page" && <PageDetail />}
+        {data.type[0] !== "Page" && <PostDetail />}
+      </div>
     </StyledWrapper>
   )
 }
