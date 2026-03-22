@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { useRouter } from "next/router"
 import { CONFIG } from "site.config"
 import { formatDate } from "src/libs/utils"
 import Tag from "../../../components/Tag"
@@ -12,10 +13,16 @@ type Props = {
 }
 
 const PostCard: React.FC<Props> = ({ data }) => {
+  const router = useRouter()
   const category = (data.category && data.category?.[0]) || undefined
 
+  const handleClick = () => {
+    sessionStorage.setItem("feedScrollY", String(window.scrollY))
+    sessionStorage.setItem("feedQuery", JSON.stringify(router.query))
+  }
+
   return (
-    <StyledWrapper href={`/${data.slug}`}>
+    <StyledWrapper href={`/${data.slug}`} onClick={handleClick}>
       <article>
         {category && (
           <div className="category">

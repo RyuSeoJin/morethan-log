@@ -6,9 +6,16 @@ type Props = {}
 
 const Footer: React.FC<Props> = () => {
   const router = useRouter()
+
+  const handleBack = () => {
+    const savedQuery = sessionStorage.getItem("feedQuery")
+    const query = savedQuery ? JSON.parse(savedQuery) : {}
+    router.push({ pathname: "/", query })
+  }
+
   return (
     <StyledWrapper>
-      <a onClick={() => router.push("/")}>← Back</a>
+      <a onClick={handleBack}>← Back</a>
       <a onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
         ↑ Top
       </a>

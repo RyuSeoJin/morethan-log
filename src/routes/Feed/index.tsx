@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 import SearchInput from "./SearchInput"
 import { FeedHeader } from "./FeedHeader"
@@ -18,6 +18,17 @@ type Props = {}
 
 const Feed: React.FC<Props> = () => {
   const [q, setQ] = useState("")
+
+  useEffect(() => {
+    const savedScrollY = sessionStorage.getItem("feedScrollY")
+    if (savedScrollY) {
+      const scrollY = parseInt(savedScrollY)
+      sessionStorage.removeItem("feedScrollY")
+      requestAnimationFrame(() => {
+        window.scrollTo(0, scrollY)
+      })
+    }
+  }, [])
 
   return (
     <StyledWrapper>
