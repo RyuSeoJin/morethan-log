@@ -12,7 +12,8 @@ const Detail: React.FC<Props> = () => {
   const router = useRouter()
   useMermaidEffect()
 
-  const handleBackdropClick = () => {
+  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target !== e.currentTarget) return
     const savedQuery = sessionStorage.getItem("feedQuery")
     const query = savedQuery ? JSON.parse(savedQuery) : {}
     router.push({ pathname: "/", query })
@@ -21,10 +22,8 @@ const Detail: React.FC<Props> = () => {
   if (!data) return null
   return (
     <StyledWrapper data-type={data.type} onClick={handleBackdropClick}>
-      <div onClick={(e) => e.stopPropagation()} css={{ cursor: "auto" }}>
-        {data.type[0] === "Page" && <PageDetail />}
-        {data.type[0] !== "Page" && <PostDetail />}
-      </div>
+      {data.type[0] === "Page" && <PageDetail />}
+      {data.type[0] !== "Page" && <PostDetail />}
     </StyledWrapper>
   )
 }
